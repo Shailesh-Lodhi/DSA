@@ -48,7 +48,13 @@ void del_f(){
         printf("Array is empty");
     }
 }
-
+void upd_pos(int x, int pos){
+    if(ind>-1){
+        arr[pos]=x;
+    }else{
+        printf("Array is empty");
+    }
+}
 void traverse(){
     printf("\n");
     for(int i=0;i<=ind;i++){
