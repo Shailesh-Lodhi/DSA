@@ -76,3 +76,203 @@ int main(){
     traverse();
     traverse();
 }
+
+
+// ************************** LINKED LIST ****************************
+
+
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+} node;
+node *head = NULL, *ptr;
+int count = 0;
+void insert(int x)
+{
+    ptr = (node *)malloc(sizeof(node));
+    ptr->data = x;
+    if (head == NULL)
+    {
+        ptr->next = NULL;
+    }
+    else
+    {
+        ptr->next = head;
+    }
+    head = ptr;
+    count++;
+}
+void insert_last(int x)
+{
+    ptr = (node *)malloc(sizeof(node));
+    ptr->data = x;
+    ptr->next = NULL;
+    if(head == NULL){
+        head = ptr;
+    }
+    else
+    {
+        node *ptr1 = head;
+        while (ptr1->next != NULL)
+        {
+            ptr1 = ptr1->next;
+        }
+        ptr1->next = ptr;
+    }
+    count++;
+}
+
+node *tail = NULL;
+
+void insertlast(int x)
+{
+    ptr = (node *)malloc(sizeof(node));
+    ptr->data = x;
+    ptr->next = NULL;
+    if (head == NULL)
+    {
+        head = ptr;
+    }
+    else
+    {
+        tail->next = ptr;
+    }
+    tail = ptr;
+    count++;
+}
+void insert_pos(int x, int p)
+{
+    if (p >= 1 && p <= count + 1)
+    {
+        ptr = (node *)malloc(sizeof(node));
+        ptr->data = x;
+        if (p == 1)
+        {
+            insert(x);
+        }
+        else if (p == count + 1)
+        {
+            insert_last(x);
+        }
+        else
+        {
+            node *ptr1 = head;
+            for (int i = 1; i < p - 1; i++)
+            {
+                ptr1 = ptr1->next;
+            }
+            ptr->next = ptr1->next;
+            ptr1->next = ptr;
+            count++;
+        }
+    }
+}
+void del()
+{
+    if (head != NULL)
+    {
+        ptr = head;
+        head = head->next;
+        free(ptr);
+    }
+}
+
+void de_l()
+{
+    if (head != NULL)
+    {
+        node *ptr1;
+        ptr = head;
+        if (head->next == NULL)
+        {
+            head = NULL;
+        }
+        else
+        {
+
+            while (ptr->next != NULL)
+            {
+                ptr1 = ptr;
+                ptr = ptr->next;
+            }
+        }
+        free(ptr);
+        ptr1->next = NULL;
+        count--;
+    }
+}
+
+void delpos(int p)
+{
+    ptr = head;
+    node *ptr1;
+    if (p >= 1 && p <= count)
+    {
+        if (head != NULL)
+        {
+            if (p == 1)
+            {
+                head = head->next;
+            }
+            else
+            {
+                for (int i = 1; i < p; i++)
+                {
+                    ptr1 = ptr;
+                    ptr = ptr->next;
+                }
+                ptr1->next = ptr->next;
+            }
+            count--;
+            free(ptr);
+        }
+        else
+        {
+            printf("\n list is empty ");
+        }
+    }
+    else
+    {
+        printf("\n position invalid");
+    }
+}
+
+void upd(int value, int newvalue)
+{
+    if (head != NULL)
+    {
+        ptr = head;
+        int x = 0;
+        while (ptr != NULL)
+        {
+            if (ptr->data == value)
+            {
+                ptr->data = newvalue;
+                x++;
+                break;
+            }
+            ptr = ptr->next;
+        }
+        if (x > 0)
+        {
+            printf("value updated");
+        }
+        else
+        {
+            printf("not upd");
+        }
+    }
+}
+void traverse()
+{
+    ptr = head;
+    printf("\n");
+    while (ptr != NULL)
+    {
+        printf("%d ", ptr->data);
+        ptr = ptr->next;
+    }
+}
