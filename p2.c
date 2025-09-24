@@ -240,7 +240,24 @@ void delpos(int p)
     }
 }
 
-void upd(int value, int newvalue)
+void updByPos(int val, int pos)
+{
+    if (pos < 1 || pos > count)
+    {
+        printf("\nInvalid Position....");
+    }
+    else
+    {
+        ptr = head;
+        for (int i = 1; i < pos; i++)
+        {
+            ptr = ptr->next;
+        }
+        ptr->data = val;
+    }
+}
+
+void updByValue(int value, int newvalue)
 {
     if (head != NULL)
     {
@@ -266,6 +283,7 @@ void upd(int value, int newvalue)
         }
     }
 }
+
 void traverse()
 {
     ptr = head;
