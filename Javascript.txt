@@ -1,0 +1,40 @@
+                        
+Markup language :- Those language are used to create structure of a webpage is called markup language.
+
+Programming language :- Those language perform any task and any Logical thing is called are called Programming language.
+
+
+                                        --------------- How browser work ---------------
+
+                                            http request               html,css,js response
+                                                |                              |
+                                 Browser ---------------------> Server --------------------> Browser
+
+
+                                     -------------- Clint AND Server Side language --------------
+
+Clint Side :- Those language which perform any task on user's System are called clint side language.
+
+Server Side :- Those language which perform any task on Server are called server side language.
+
+                                        -----------------   JavaScript   ---------------------
+
+Javascript :- JavaScript is a high level programming language, clint side, interpreted language which is used to add functionality on    wepages and add animation on wepages.
+
+JavaScript is created by brendan Eich in 1995.
+
+It is used to make pages dynamic.
+
+Previous names of Javascript
+                            |------> Mocha
+                            |------>LiveScript
+                            |------>JavaScript
+
+                                        -------------- JavaScript Engine --------------
+
+JavaScript Engine :- It is a software in our browser that convert the JavaScript code inn Machine code and runs on our browser. Each browser has their different js engine.
+
+Some Famous browser and their js engine
+                                       |---> Crome, Edge ---> V8
+                                       |---> Safari ---> JavaScriptCore
+                                       |---> FireFox ---> SpiderMonkey

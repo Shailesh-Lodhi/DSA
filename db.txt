@@ -1,0 +1,239 @@
+Database -> A database is a shared collection of logical related data and description of these data desgine to meet the information need to an organization.
+
+IMPORTANCE OF DATABASE
+1. Data storage -> A database is used to store large amount of structure data making it easily, accessible, searchable and retrivable.
+2. Data analysis -> A database can be used to perform complex data analysis generate reports and provide insights into the data.
+3. Records Copying -> A database is often used to keep track of important records such as financial transaction , customer information.
+4. Web applications -> 
+
+
+
+TYPES OF DATABASES
+
+1. Relational db -> Also known as sql database . this database use a relational model to organize data into tables with rows and columns .
+ex. -> sql, oracle, microsoft asscrss, excel, access.
+2. No sql database - > These database are designed to handle large amount of unstructured or semi structured data such as 
+documnets file, images, audio or videos. 
+ex. -> mongo db.
+3. Column db -> THese db store data in columns rather than rows .
+ex. -> amazon red shift
+4. Graph -> These db are used to store and query graph structured data such as social networks connections or recomandations system.
+ex.-> Amazon neptuen.
+5. Key value db-> these db store data as a collection of key name and key values.
+ex-> amazon dynamo db
+
+Relational database -> 
+ id    st_name    st_course     st_fees
+ 1     Ram         Java         10000
+ 2     A           C            20000
+ 3     B           C++          Null
+ 4     C           Py           15000
+
+Column -> Attributes, Field.
+Rows -> Tupple , records.
+No. of columns -> set of columns
+No. of rows -> set of rows.
+
+DBMS -> A dbms is a software system that provides the interfaces and tools needed to store , organize and manage data in a database or DBMS act 
+as a intermediate between the database and the applications or users that access the data stored in the database.
+
+Order->
+USER     USER     USER    USER    USER
+          APPLICATIONS
+            DBMS
+            O.S
+          HARD DISK 
+
+                                                             Keys  
+
+A key in a database is attribute or a set of attribute that uniquely indentify a row(touple) in a table.
+
+Types of key -> 
+    super  , 
+    candidate ,
+    *primary ,
+    alternate, 
+    composite, 
+    surrogate,  
+    *forign .
+
+    1. Super Keys - It is a set of comnbination of all attribute.
+                                    
+    2. Candidate key - It is a minimal super key .
+
+    3. *Primary key - Primary key is used to uniquely identify the table or it doesnt have any duplicate value and blank space and try that it has less length and it should numiric.
+
+    4. Alternate key - It could be a primary key. OR Alternate Key is any candidate key not selected as the primary key.
+
+    5. Composite key - A composite key is a primary key that is made up of more than one column to uniquely identify records in a table.
+
+    6. Surrogate key - When we do not have a natural primary key in a table, then we need to artificially create one in order to uniquely identify a row in the table, this key is called surrogate key.
+
+    7. *Forign key - A foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table. OR
+
+
+
+
+                                                        SQL
+
+
+
+Types of SQl Commmands :-
+
+    There are Four types of SQL Commmands.
+
+                                                        SQL
+DDL(Data Defination Language)       DML(Data Manipulation Language)      DCL(Data Control Language)      TCL(Transaction Control Language)
+        |                                   |                                   |                               |
+    -create                             -insert                             -grant                          -commit
+    -Alter                              -select(Retrive)                    -revoke                         -rollback
+    -drop                               -update
+    -truncate                           -delete
+
+
+    a) DDL (Data Defination Language):- Data Defination Language consists all the commands for the creation updation deletion of Database and table.
+        1) create :- This command is used to create new database and table.
+        2) alter :- This command is used to modify the existing database and table.
+        3) drop :- This command id used to  delete database and table object.
+        4) truncate :- This command iis used to delete all the rows from the table.
+
+
+    b) DML (Data Manipulation Language) :- Data Manipulation Language consists all the commands to manipulate the data in a table.
+        1) insert :- This command is used to add row in a table OR create new row in a table.
+        2) select :- This command is used to retrive data from the table.
+        3) update :- This command is used to modify data in a table.
+        4) delete :- This command is used to delete data OR row from table.
+
+
+    c) DCL (Data Control Language) :- Data Control Language consists commands for accessing permissions on database.
+        1) grant :- This command  provide access rights (permissions) on database.
+        2) revoke :- This command withdraw access rights (permissions) on database.
+
+
+    d) TCL (Transaction Control Language) :- Transaction Control Language is ussed to manage all the Transaction changes made by DML.
+        1)commit :- Save database changes and end Transaction.
+        2) rollback :- Undo all changes that are not commit and end Transaction.
+
+
+
+                                                            Cardinality
+
+Cardinality in database relationship refers to the number of occerence of an entity in a relationship with another entity.
+    1) One to One           2) One to Many          3) Many to One          4)Many to Many
+
+    1)One to One :- In this entity of set A is connected to atleast one entity of set B.  OR    One row of table A is connected to atleast one row of another table.
+
+    2)One to Many :- In this entity of set A is connected to multiple entity of set B. 
+
+    3)Many to One :- In this multiple entity of set A is connected to one entity of set B.
+
+    4)Many to Many :- In this multiple entity of set A is connected to multiple entity of set B.
+
+DDL Commands -> 
+
+1. Create -> 
+            CREATE DATABASE database_name;
+            CREATE TABLE table_name(col1_name DATATYPE(len),col2_name DATATYPE(len),col2_name DATATYPE(len));
+
+2. DROP -> 
+          DROP DATABASE database_name;
+          DROP TABLE table_name;
+3. TRUNCATE -> 
+             TRUNCATE TABLE table_name;
+
+4. ALTER -> 
+              1. ADD NEW COLUMN ->
+
+                                ALTER TABLE table_name ADD COLUMN col_name DATATYPE(LEN);
+
+              2. CHANGE DATATYPE OF A COLUMN -> 
+
+                                ALTER TABLE table_name MODIFY COLUMN col_name NEW_DATATYPE(NEW_LEN);
+
+              3. DROP COLUMN -> 
+
+                                ALTER TABLE table_name DROP COLUMN col_name;
+
+              4. CHANGE COLUMN NAME ->
+
+                                ALTER TABLE table_name CHANGE old_col_name new_col_name NEW_DATATYPE(NEW_LEN);
+
+              5. CHANGE TABLE NAME -> 
+                                 
+                                ALTER TABLE table_name RENAME  new_table_name;
+
+
+
+
+
+                                ******************* 26/09/2-25 *********************
+
+Topic :- Like OP, Order By Func, Limit Func.
+
+                                    ------------------------------------------------------------------------------
+
+                                                            SQl Code
+
+                                    SELECT * FROM mobile_info.sm;
+                                    select * from sm where price>50000 and brand_name like 'a%' and brand_name like '%e';
+                                    select * from sm order by brand_name asc;
+                                    select * from sm order by brand_name desc;
+                                    select * from sm where price>50000 order by brand_name asc;
+                                    select * from sm limit 1;
+                                    select * from sm order by price desc limit 5;
+                                    select * from sm order by price asc limit 10;
+                                    select * from sm order by price desc limit 1,1;
+                                    select * from sm order by price desc limit 4,1;
+                                    select * from sm order by price desc limit 2,2;
+                                    select * from sm where brand_name="apple" and price<50000 order by price asc limit 1;
+
+
+                                    ------------------------------------------------------------------------------
+
+
+Like Operator :- The LIKE operator in SQL is used in the WHERE clause to search for a specified pattern in a column.
+
+    Ex :- select * from smartphones where brand_name like 'a%';  // give all smartphones whose brand_name which starts with a;
+
+          select * from smartphones where brand_name like '%e'; // give all  smartphones whose brand_name which ends with e;
+
+          select * from smartphones where brand_name like ''%p%'; // give all smartphones which contain p in its brand_name at any position.
+
+          
+                                    ------------------------------------------------------------------------------
+
+
+Order By :- It is used to sort the result set in ascending or descending order by one or more columns.By default it always sort in assending order;
+
+    Ex :- select * from smartphones order by price asc; 
+          select * from smartphones order by brand_name asc; // it sort the result in assending order.
+
+          select * from smartphones order by price desc;
+          select * from smartphones order by brand_name desc; // it sort th result in decending order.
+
+
+                                    ------------------------------------------------------------------------------
+
+
+*Limit Function :- The LIMIT Function in SQL is used to restrict the number of rows returned by a query. It is particularly useful when you need to fetch a subset of   data.
+
+        Types of limit Function :- limit x; // it gives only number of rows which we give on the place of x ;
+
+                                   Ex :- select * from smartphones limit 1; 
+                                         select * from smartphones order by price desc limit 5;
+                                         select * from smartphones order by price asc limit 10;
+
+                                   limit x, y; // on the place of x we give number of row which we want to skip && on the place of we give number of rows which we want after skip.  
+
+                                   Ex :- select * from smartphones order by price asc limit 10;
+                                         select * from smartphones order by price desc limit 1,1;
+                                         select * from smartphones order by price desc limit 4,1;
+                                         select * from smartphones order by price desc limit 2,2;
+
+
+
+
+
+
+
+                                      
