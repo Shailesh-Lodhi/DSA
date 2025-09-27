@@ -11,16 +11,16 @@ Programming language :- Those language perform any task and any Logical thing is
                                  Browser ---------------------> Server --------------------> Browser
 
 
-                                     -------------- Clint AND Server Side language --------------
+                                     -------------- client AND Server Side language --------------
 
-Clint Side :- Those language which perform any task on user's System are called clint side language.
+Client Side :- Those language which perform any task on user's System are called client side language.
 
 Server Side :- Those language which perform any task on Server are called server side language.
 
                                         -----------------   JavaScript   ---------------------
 
-Javascript :- JavaScript is a high level programming language, clint side, interpreted language which is used to add functionality on    wepages and add animation on wepages.
-
+Javascript :- JavaScript is a high level programming language, client side, interpreted language which is used to add functionality on    wepages and add animation on wepages.
+JavaScript is a high level programming language, client side ,interpreted language which is used to define behavior of html page.
 JavaScript is created by brendan Eich in 1995.
 
 It is used to make pages dynamic.
@@ -32,9 +32,57 @@ Previous names of Javascript
 
                                         -------------- JavaScript Engine --------------
 
-JavaScript Engine :- It is a software in our browser that convert the JavaScript code inn Machine code and runs on our browser. Each browser has their different js engine.
+JavaScript Engine :- It is a software in our browser that convert the JavaScript code in Machine code and runs on our browser. Each browser has their different js engine.
 
 Some Famous browser and their js engine
-                                       |---> Crome, Edge ---> V8
+                                       |---> Crome, Edge ,Brave ,UC browser ---> V8
                                        |---> Safari ---> JavaScriptCore
                                        |---> FireFox ---> SpiderMonkey
+
+
+                             --------------------******* 27/09/2025 *******------------------
+                            
+                                    -------------- Types to use JavaScript -------------
+
+Their are three Types to write JS. These are not type of JavaScript.
+
+                                      **** JS code written inside the script tag ****
+
+Inline JS :- When we write inside a tag or element of html then it is called Inline JS.
+
+            Ex :- <h1> Hello <script> document.write("JS:); </script></h1>
+            Output :- Hello JS
+
+
+Internal JS :- When we write JS inside html not inside a tag than it is called Internal JS.we can use this inside head,body and outside body.
+
+            Ex :- <head>
+                        <title>Internal JavaScript Example</title>
+                            <script>
+                                // JavaScript code here //
+                                function greet() {
+                                alert("Hello from the head!");
+                                }
+                            </script>
+                        </head>
+
+
+External JS :- External JavaScript refers to JavaScript code that is written in a separate file with a .js extension and then linked to an HTML document.
+
+            1 It separates HTML and code.
+            2 It makes HTML and JavaScript easier to read and maintain.
+            3 Cached JavaScript files can speed up page loads.
+
+            *** The Best way to js file in HTML is to add it into head section because it loads JavaScript  at bigning of webpage.
+
+            Ex :-  <html>
+                        <head>
+                            <title>
+
+                            </title>
+                            <script src="Location/Name.Type"></script>
+                        </head>
+                    </html>
+
+                    Absolute path :- Full path of any file is called Absolute path.
+                    Relative path :- This specify the Location from current directory of file.

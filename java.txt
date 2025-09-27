@@ -207,7 +207,23 @@ the member variables and methods of the class.
 
 3 .                     ********************** Constructor ******************                           (26/09/2025)
 
-Constructor is special type of member function OR method. It has same as class name ans it dosent return any value. Just specify the access type of it. 
+Constructor is special type of member function OR method. It has same as class name ans it dosent return any value. Just specify the access type of it. Constructor is called when we created a new object.
 
+Every time when we create an object by using the new keyword, it calls a default constructor. If there is no constructor available in the class. In such case, Java compiler provides a default constructor by default.
 
+Constructor are oftenly used to initlize the undefined values in class.
+
+TYPES OF CONSTRUCTOR :-
+
+                1 Compiler Defined :- It is creted by compiler itself when there are not any constructor present in a class.
+
+                2 Parametrize 
+                            |---> Default :- It is created by programer it does not take any Arguments.
+                                  Use :- Ensuring Default Initialization (When we need to assign default value to a variable)
+                                        // It is basically provided to modify the default constructor //
+
+                            |---> Parametrize :- In this constructor we pass the Arguments. We can create different Parametrize constructor according to the use;
+                                  Use :- Basically it is used to initilize the instance variable
+
+* When we have more than one user defined constructor in our class with different parameter (in nuber or in type) is called constructor overloading.
         
