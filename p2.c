@@ -296,3 +296,147 @@ void traverse()
 }
 
 
+// *********************************** CIRCULAR LIKED LIST ******************************************
+
+void C_insertStart(int x)
+{
+    ptr = (node *)malloc(sizeof(node));
+    ptr->data = x;
+    if (head == NULL)
+    {
+        ptr->next = ptr;
+    }
+    else
+    {
+        ptr->next = head;
+        node *ptr1 = head;
+        while (ptr1->next != head)
+        {
+            ptr1 = ptr1->next;
+        }
+        ptr1->next = ptr;
+    }
+    head = ptr;
+    count++;
+}
+
+void C_insertLast(int x)
+{
+    ptr = (node *)malloc(sizeof(node));
+    ptr->data = x;
+    if (head == NULL)
+    {
+        ptr->next = ptr;
+        head = ptr;
+    }
+    else
+    {
+        ptr->next = head;
+        node *ptr1 = head;
+        while (ptr1->next != head)
+        {
+            ptr1 = ptr1->next;
+        }
+        ptr1->next = ptr;
+    }
+    count++;
+}
+void C_delSt()
+{
+    ptr = head;
+    if (head->next == head)
+    {
+        head = NULL;
+    }
+    else
+    {
+
+        node *ptr1 = head;
+        for (int i = 1; i < count; i++)
+        {
+            ptr1 = ptr1->next;
+        }
+        head = head->next;
+        ptr1->next = head;
+    }
+    free(ptr);
+    count--;
+}
+
+void C_delLast()
+{
+    ptr = head;
+    if (head->next == head)
+    {
+        head = NULL;
+    }
+    else
+    {
+        node *ptr1;
+        while (ptr->next != head)
+        {
+            ptr1 = ptr;
+            ptr = ptr->next;
+        }
+        ptr1->next = head;
+    }
+    free(ptr);
+    count--;
+}
+void C_updByVal(int val, int newval)
+{
+    int x = 0;
+    if (head != NULL)
+    {
+        ptr = head;
+        int x = 0;
+        while (ptr != NULL)
+        {
+            if (ptr->data == val)
+            {
+                ptr->data = val;
+                x++;
+                break;
+            }
+            ptr = ptr->next;
+        }
+        if (x > 0)
+        {
+            printf("\nData enterd");
+        }
+        else
+        {
+            printf("\nData does not enterd");
+        }
+    }
+    else{
+        printf("List is Empty...");
+    }
+}
+void C_updByPos(int val, int pos)
+{
+    if (pos < 1 || pos > count)
+    {
+        printf("\nInvalid Position....");
+    }
+    else
+    {
+        ptr = head;
+        for (int i = 1; i < pos; i++)
+        {
+            ptr = ptr->next;
+        }
+        ptr->data = val;
+    }
+}
+void C_traverse()
+{
+    printf("\n");
+    ptr = head;
+    for (int i = 1; i < count; i++)
+    {
+        printf("%d ", ptr->data);
+        ptr = ptr->next;
+    }
+    printf("%d ", ptr->data);
+}
