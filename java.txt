@@ -227,3 +227,88 @@ TYPES OF CONSTRUCTOR :-
 
 * When we have more than one user defined constructor in our class with different parameter (in nuber or in type) is called constructor overloading.
         
+
+                    ******************* Static keyword *******************                                             (30/09/2025)
+
+Static keyword in java is non access access modifier. It is used for memory management.The static keyword belongs to class rather than object variable. Static content gets load in the memory when the class get loads in the memory. JVM has different place to store static content.All object share the same memory to static content.
+
+    Characterstics :-
+
+        Belongs to the Class, Not the Object :- 
+        Anything marked as static is tied to the class itself, not individual objects. It means all objects share the same static variables and methods.
+
+        Access Without an Object :- 
+        Since static members belong to the class, you can access them directly using the class name. No need to create an object.
+
+        Static Methods Cannot Use Instance Variables Directly :- 
+        A static method does not know about specific objects, so it cannot directly access non-static (instance) variables or methods.
+
+        Main Method is Static :- 
+        The main method in Java is static so that Java can run the program without creating an object first.
+
+        Executed Once When the Class is Loaded :-
+        A static block runs once when the class is first loaded, making it useful for initializing things like constants.
+
+        Not Overridden Like Normal Methods :- 
+        Static methods do not follow typical method overriding. If a subclass defines the same static method, it's more like re-declaring it rather than overriding it.
+
+    Static Keyword can be used with :
+                                    |---->variable
+                                    |---->method
+                                    |---->block
+                                    |---->nested class
+
+    Static variable :- Static variable share same memory among all object. It loads when the class gets load in memory.
+                       It is called as class variable instead of objectvariable. 
+                       We can call the static variable with class name (ClassName.VARNAME) and this is best way to call it. 
+                       If we change the value of static variable for one object it will get change for all objects. 
+
+    Basically it is used to make constant.
+
+
+    Static Method :- A static method can call without creating an instance of class.
+                     Static method is known as class method instead of object method.
+                     A static method cannot directly not-static content.
+                     This and super keyword cannot use static method.
+
+                     If we want of use the non static variable in static method then we have to pass the the object to static method
+
+
+                     Ex :- 
+
+                        import java.util.*;
+                        class newclass{
+                            static String name;
+                            static int pr;
+                            static int nm;
+                            int dm ;
+                            static void display1(newclass n123){
+                                System.out.println(name+" "+pr+" "+nm+" "+n123.dm);
+                            }
+                            void display(){
+                                System.out.println("name "+name+" price "+pr+" number "+nm);
+                            }
+                        }
+                        public class dsa {
+                            public static void main(String[] args) {
+                                newclass.name="apple";
+                                newclass.pr=12334598;
+                                newclass.nm=127329; 
+                                newclass n12 = new newclass();
+                                n12.dm= 123;
+                                newclass.display1(n12);
+                            }
+                        }                     
+
+
+    Static block :- A static block in Java is a special block of code marked with the static keyword, also known as a static initializer block. 
+                    It is primarily used for initializing static variables or performing other setup operations that need to occur once when the class is 
+                    loaded into memory
+
+                    Static blocks are executed only once when the class is loaded into memory, before the execution of the main method or the creation of any object of the class.
+
+                    They are ideal for complex static variable initialization that cannot be done in a single statement, loading configuration files, setting up static resources, or establishing initial connections.
+
+
+
+    *** Class.forname Method is used to load your class in memory. Syntsx :- Class.forname("CLASSNAME"); 
