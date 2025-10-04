@@ -51,3 +51,31 @@ class ContainDup {
         return false;
     }
 }
+
+
+// Question :- leetcode :- 414. Third Maximum Number
+// Time Complexity :- O(n) (Optimal) && Space Complexity :- O(1) (Optimal)
+
+class ThirdMax {
+    public int thirdMax(int[] nums) {
+        long m = Long.MIN_VALUE, s = Long.MIN_VALUE, t = Long.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > m) {
+                t = s;
+                s = m;
+                m = nums[i];
+            } else if (nums[i] > s && nums[i] < m) {
+                t = s;
+                s = nums[i];
+
+            } else if (nums[i] > t && nums[i] < s && nums[i] < m) {
+                t = nums[i];
+
+            }
+        }
+        if (t == Long.MIN_VALUE) {
+            return (int) m;
+        }
+        return (int) t;
+    }
+}

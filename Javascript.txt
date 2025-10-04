@@ -86,3 +86,8 @@ External JS :- External JavaScript refers to JavaScript code that is written in 
 
                     Absolute path :- Full path of any file is called Absolute path.
                     Relative path :- This specify the Location from current directory of file.
+
+
+
+                                --------------------******* 30/09/2025 *******------------------
+
