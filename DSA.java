@@ -79,3 +79,23 @@ class ThirdMax {
         return (int) t;
     }
 }
+
+
+// Question leetcode :-2149. Rearrange Array Elements by Sign
+
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int x = 0, y = 1, result [] = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] > 0){
+                result[x] = nums[i];
+                x=x+2;
+            }
+            else{
+                result[y] = nums[i];
+                y=y+2;
+            }
+        }
+        return result;
+    }
+}
