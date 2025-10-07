@@ -99,3 +99,51 @@ class Solution {
         return result;
     }
 }
+
+
+// Question :- Leetcode :- 905. Sort Array By Parity
+
+class SortParity {
+    public int[] sortArrayByParity(int[] nums) {
+        int ind = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                int t = nums[i];
+                nums[i] = nums[ind];
+                nums[ind] = t;
+                ind++;
+            }
+        }
+        return nums;
+    }
+}
+
+
+// Another Solution
+
+class SortParity2 {
+    public int[] sortArrayByParity(int[] nums) {
+        if (nums.length == 1)
+            return nums;
+        int i = 0, j = 1;
+        while (j < nums.length) {
+            if(nums[i]%2==0){
+                i++;j++;
+            }
+            else if (nums[j] % 2 == 1) {
+                j++;
+            } else {
+                if (nums[i] != 0) {
+                    int t = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = t;
+                    i++;
+                    j++;
+                } else {
+                    i++;
+                }
+            }
+        }
+        return nums;
+    }
+}
