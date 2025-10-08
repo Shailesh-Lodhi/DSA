@@ -312,3 +312,58 @@ Static keyword in java is non access access modifier. It is used for memory mana
 
 
     *** Class.forname Method is used to load your class in memory. Syntsx :- Class.forname("CLASSNAME"); 
+
+                    *********************** This Keyword ************************                         (08 / 10 /2025)
+
+The this keyword in Java is a reference to the current object within a class.
+this keyword refers to the current object of a class.
+Mostly this keyword is used to eliminate the ambiguity between local variable ans global variable.
+ USES :- 
+
+    1. Differentiating between instance variables and local variables/parameters:-
+        When a method or constructor parameter has the same name as an instance variable, this is used to explicitly refer to the instance variable, preventing ambiguity. 
+
+    2. Calls Other Methods in the Same Class:-
+        We don't always need this, but we can use it explicitly to call another method within the same class.
+        * In java compiler automatic add this keyword when we call method of same class.
+    
+    3. Supports Constructor Chaining:-
+        this() can be used inside a constructor to call another constructor in the same class, helping reuse code.
+
+    4. this: To Pass as an Argument in The Method:-
+        Java this keyword can also be passed as an argument in the method. It is mainly used in event handling. Let's see the example.
+
+    5) this: To Pass as Argument in The Constructor Call:-
+        We can pass the this keyword in the constructor also. It is useful if we have to use one object in multiple classes. Let's see the example:
+            class B{    
+                A4 obj;    
+                B(A4 obj){    
+                    this.obj=obj;    
+                }    
+                void display(){    
+                    System.out.println(obj.data);//using data member of A4 class    
+                }    
+            }    
+            class Main {    
+                int data=10;    
+                A4(){    
+                   B b=new B(this);    
+                   b.display();    
+                }    
+                public static void main(String args[]){    
+                   A4 a=new A4();    
+                }    
+            }   
+
+
+    Advantages :- 
+
+        Avoids Confusion: If a method has a parameter with the same name as an instance variable, it helps refer to the instance variable.
+
+        Improves Readability: It makes it clear that you're working with the object's own data.
+        
+        Simplifies Constructor Chaining: It allows one constructor to call another, reducing duplicate code.
+
+        Enables Method Chaining: We can call multiple methods in one statement, making the code cleaner.
+
+        Passes the Object Itself: Sometimes, you need to send the current object to another method, and this makes it easy.
