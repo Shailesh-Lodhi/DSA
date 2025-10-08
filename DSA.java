@@ -147,3 +147,43 @@ class SortParity2 {
         return nums;
     }
 }
+
+//Question leetcode :- 119. Pascal's Triangle II
+
+class PascalTriangle {
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> list = new ArrayList<>();
+        long num = 1;
+        list.add((int)num);
+        for(int i=0; i<rowIndex;i++){
+            num = num * (rowIndex - i);
+            num = num / (i+1);
+            list.add((int)num);
+        }
+        return list;
+    }
+}
+
+// Questions leetcode :- 118. Pascal' Triangle I
+
+class PsTriangle {
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> list = new ArrayList<>();
+        long num = 1;
+        list.add((int) num);
+        for (int i = 0; i < rowIndex; i++) {
+            num = num * (rowIndex - i);
+            num = num / (i + 1);
+            list.add((int) num);
+        }
+        return list;
+    }
+
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            result.add(getRow(i));
+        }
+        return result;
+    }
+}
