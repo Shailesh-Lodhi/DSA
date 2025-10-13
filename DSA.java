@@ -187,3 +187,22 @@ class PsTriangle {
         return result;
     }
 }
+
+
+// Question leetcode :- 1910. Remove All Occurrences of a Substring
+
+class remOccer {
+    public String removeOccurrences(String s, String part) {
+        StringBuilder ans = new StringBuilder(s);
+        int n = part.length();
+        while (true) {
+            int i = ans.indexOf(part);
+            if (i == -1)
+                break;
+            else {
+                ans.delete(i, i + n);
+            }
+        }
+        return ans.toString();
+    }
+}
